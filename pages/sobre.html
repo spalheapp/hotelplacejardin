@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-brasil">
+<head>
+        <script language="JavaScript">
+        function protegercodigo() {
+        if (event.button==2||event.button==3){
+            alert('Código protegido por: Marcos Santos');}
+        }
+        document.onmousedown=protegercodigo
+    </script>
+    <script>
+    if (document.addEventListener) {
+        document.addEventListener("keydown", bloquearSource);
+    } else { //Versões antigas do IE
+        document.attachEvent("onkeydown", bloquearSource);
+    }
+    
+    function bloquearSource(e) {
+        e = e || window.event;
+    
+        var code = e.which || e.keyCode;
+    
+        if (
+            e.ctrlKey &&
+            (code == 83 || code == 85) //83 = S, 85 = U
+        ) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+    
+            return false;
+        }
+    }
+    </script>
+    <link rel="icon" type="img/png" href="/src/img/favicon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/nav.css">
+    <link rel="stylesheet" href="../styles/alugue/main.css">
+    <link rel="stylesheet" href="../styles/alugue/callToAction.css">
+    <link rel="stylesheet" href="../styles/alugue/divisoria.css">
+    <link rel="stylesheet" href="../styles/alugue/sobre.css">
+    <link rel="stylesheet" href="../styles/alugue/servicos.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="../dist/css/bootstrap-reboot.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <title>Hotel Place Jardin</title>
+    <meta name="title" content="Hotel Place Jardin - Tamandaré e Carneiros">
+    <meta name="description" content="Hotel Place Jardin - Espaço para recarregar as energias.">
+    <meta name="author" content="Marcos Santos">
+    <meta name="description" content="Hotel Place Jardin">
+    <meta name="keywords" content="Hotel Place Jardin, Praia, Hotel, Carneiros, Tamandaré PE, Pernambuco, Tamandaré Pousada, Tamandaré Hotel, Tamandaré Praia, Tamnadaré Carneiros">
+    <link rel="canonical" href=https://www.hotelplacejardin.com/" />
+</head>
+
+<body>
+    <header>
+        <nav class=" navbar navbar-light bg-light">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+
+
+                <div>
+                    <a href="/" class="nav-brand">
+                        <img src="../src/img/footer/loogoapp.fw.png" alt="" width="100">
+                    </a>
+                </div>
+
+
+                <div>
+                    <a class="navLink" href="/">Início</a>
+                    <a class="navLink" href="sobre.html">Sobre o Hotel</a>
+
+
+                    <button onclick="menu()"><i class="fa-solid fa-bars fa-2x"></i></button>
+                </div>
+
+
+            </div>
+
+
+        </nav>
+    </header>
+
+    <main>
+        <div id='mainBox' class="container">
+            <div id="headerMain">
+                <h1>SOBRE HOTEL PLACE JARDIN <br>
+                     CONHEÇA AGORA!</h1>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sobre -->
+    <section id="sobre" class="container">
+        <!-- divisória -->
+        <div class="divisoria">
+            <hr>
+            <div>
+                <p>HOTEL PLACE JARDIN</p>
+            </div>
+            <hr>
+        </div>
+
+
+        <!-- SobreBox -->
+        <div id="sobreBox">
+            <div id="sobreTxt">
+                <p>
+                <h5>Sobre nosso Hotel </h5>O Hotel Place Jardin está estrategicamente situado em uma das mais encantadoras cidades do Nordeste, oferecendo uma estadia excepcional na "Suíça Pernambucana", combinando conforto e economia. Preservando seu charme e glamour, o hotel mantém sua tradição de excelência, marcando época em cada experiência proporcionada aos seus hóspedes. Desfrute de camas confortáveis, culinária deliciosa e serviços de alta qualidade durante sua estadia conosco. Visite nosso site para mais informações e faça sua reserva agora mesmo!</p>
+                <p>
+                <h5>Serviços Inclusos: </h5>
+                <p>-Café da manhã.</p>
+                <p>-Uma criança até 5 anos por apartamento (na mesma cama).</p>
+                <p>-Apartamento com ar-condicionado, espaço home office, chuveiro elétrico, secador de cabelo, smartv e guarda roupa</p>
+            </div>
+            <div id="sobreImg">
+                <img src="../src/img/passeios/main.jpg" alt="">
+            </div>
+        </div>
+
+
+        <!-- divisória -->
+        <div class="divisoria2">
+            <hr>
+            <div>
+                <p>Serviços</p>
+            </div>
+            <hr>
+        </div>
+
+
+    </section>
+
+    <section id="servicos" class="container">
+        <div id="servicosBox">
+            <div class="servicosBoxs">
+                <div class="icon">
+                    <i class="fa-solid fa-check-double fa-2x"></i>
+                </div>
+                <div class="text">
+                    <h4>Chek-in e Checkout:</h4>
+                    <p>Check-in: 14:00 / Check-out: até 12:00</p>
+                </div>
+            </div>
+
+            <div class="servicosBoxs">
+                <div class="icon">
+                    <i class="fa-solid fa-house fa-2x"></i>
+                </div>
+                <div class="text">
+                    <h4>Limpeza e manutenção:</h4>
+                    <p>Temos uma equipe de limpeza preparada para cuidar dos quartos</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div>
+            <div class="servicosBoxs">
+                <div class="icon">
+                    <i class="fa-solid fa-heart fa-2x"></i>
+                </div>
+                <div class="text">
+                    <h4>Conforto com economia:</h4>
+                    <p>Nossa estrutura é composta por 28 leitos, disponível em apartamentos de casal, duplo solteiro.</p>
+                </div>
+            </div>
+
+            <div class="servicosBoxs">
+                <div class="icon">
+                    <i class="fa-solid fa-headset fa-2x"></i>
+                </div>
+                <div class="text">
+                    <h4>Suporte ao hóspedes:</h4>
+                    <p>Central de atendimento disponível para atender dúvidas e demandas 24h.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+        <!-- Footer -->
+        <div id="footer">
+            <div id="footerTxt" class="container">
+                <p>
+                <p>Endereço: Rua Maurício de nassau N° 107, Santo Antônio - Garanhuns /PE CEP: 55293-100</p>
+                <p>Email: reservashotelplacejardin@gmail.com</p>
+                </p>
+                <hr style="border: 1px solid #000; width: 100%;">
+            </div>
+
+            <div id="final" class="container">
+                <div>
+                    <img src="../src/img/footer/loogoapp.fw.png" alt="">
+                </div>
+
+                <div style="max-width: 700px;">
+                    <p>Hotel Place Jardin vocês estarão muito bem em qualquer uma das opções de acomodação, terão um café da manhã completo e fácil.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://kit.fontawesome.com/bb2d553a57.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+    crossorigin="anonymous"></script>
+<script src="../dist/js/bootstrap.min.js"></script>
+<script src="../dist/js/bootstrap.js"></script>
+<script src="../scripts/menuPages.js"></script>
+<script src="../scripts/whatsapp/alugue.js"></script>
+
+</html>
