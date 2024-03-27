@@ -6,4 +6,4 @@ const quantidade = document.querySelector('#quantidade')
 const email = document.querySelector('#email')
 
 function simular() {
-    window.location.href = `https://api.whatsapp.com/send?phone=87981229795&text=Nome:%20${nome.value}%0AEndereço:%20${endereco.value}%0ATipo:%20${tipoDeImovel.value}%0AContato:%20${telefone.value}%0AQuantidade:%20${quantidade.value}%0AE-mail:%20${email.value}`}
+    window.location.href = `https://api.whatsapp.com/send?phone=5587981229795&text=Nome:%20${nome.value}%0AEndereço:%20${endereco.value}%0ATipo:%20${tipoDeImovel.value}%0AContato:%20${telefone.value}%0AQuantidade:%20${quantidade.value}%0AE-mail:%20${email.value}`}
