@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-brasil">
+<head>
+        <script language="JavaScript">
+        function protegercodigo() {
+        if (event.button==2||event.button==3){
+            alert('Código protegido por: Marcos Santos');}
+        }
+        document.onmousedown=protegercodigo
+    </script>
+    <script>
+    if (document.addEventListener) {
+        document.addEventListener("keydown", bloquearSource);
+    } else { //Versões antigas do IE
+        document.attachEvent("onkeydown", bloquearSource);
+    }
+    
+    function bloquearSource(e) {
+        e = e || window.event;
+    
+        var code = e.which || e.keyCode;
+    
+        if (
+            e.ctrlKey &&
+            (code == 83 || code == 85) //83 = S, 85 = U
+        ) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+    
+            return false;
+        }
+    }
+    </script>
+                <style>
+        /* ===== Scrollbar CSS ===== */
+      * {
+        scrollbar-width: auto;
+        scrollbar-color #091733 #ffffff;
+      }
+      
+      /* Chrome, Edge, and Safari */
+      *::-webkit-scrollbar {
+        width: 13px;
+      }
+      
+      *::-webkit-scrollbar-track {
+        background: #ffffff;
+      }
+      
+      *::-webkit-scrollbar-thumb {
+        background-image: linear-gradient(180deg, #091733 0%, #727070 99%);
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+      }
+      </style>  
+    <link rel="icon" type="img/png" href="src/img/favicon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/reserva.css">
+    <link rel="stylesheet" href="styles/mostruario.css">
+    <link rel="stylesheet" href="styles/temporada.css">
+    <link rel="stylesheet" href="styles/contato.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/loading.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="Anonymous">
+    <link rel="stylesheet" href="dist/css/bootstrap-reboot.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="Anonymous"></script>
+
+
+    <title>Hotel Place Jardin</title>
+    <meta name="title" content="Espaço para recarregar as energias - Hotel Place Jardin">
+    <meta name="description" content="Espaço para recarregar as energias.">
+    <meta name="author" content="Marcos Santos">
+    <meta name="description" content="Hotel Place Jardin">
+    <meta name="keywords" content="Hotel Place Jardin, Praia, Hotel, Carneiros, Tamandaré PE, Pernambuco, Tamandaré Pousada, Tamandaré Hotel, Tamandaré Praia, Tamnadaré Carneiros">
+    <link rel="cAnonical" href=https://www.hotelplacejadin.com/" />
+</head>
+<body>
+
+    <div id="loading">
+        <div></div>
+        <img class="pulse" src="./src/img/footer/logobranca.svg" width="100" height="100" alt="">
+        <img src="" alt="" style="margin: 10px;">
+    </div>   
+    <header>
+        <nav class=" navbar navbar-light bg-light">
+            <div class="container">
+
+
+                <div>
+                    <a href="/" class="nav-brand">
+                        <img src="src/img/footer/logo.svg" alt="" width="100">
+                       </a>
+                </div>
+
+
+                <div>
+                    <a class="navLink" href="/">Início</a>
+		   <a class="navLink" href="pages/sobre.html">Sobre o Hotel</a>
+
+                
+                    <button onclick="menu()"><i class="fa-solid fa-bars fa-2x"></i></button>
+                </div>
+
+
+            </div>
+
+
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main id="carousel"></main>
+
+    <!-- Reserve -->
+    <section id="reserva" >
+        <div id="reservaBox" class="container">
+            <h1>Faça aqui a sua reserva!</h1>
+
+            <form>
+                <select name="" id="lugares" class="form-control">
+                    <option value="">Escolha o tipo de acomodação</option>
+                    <option value="Quarto Luxo Casal">Quarto Luxo Casal</option>
+                    <option value="Quarto Luxo Duplo Solteiro">Quarto Luxo Duplo Solteiro</option>
+                </select>
+            </form>
+
+            <div id="entradaSaida">
+                <div>
+                    <p>Entrada:</p>
+                    <input type="date" id="dataEntrada">
+                </div>
+                <div>
+                    <p>Saida:</p>
+                    <input type="date" id="dataSaida">
+                </div>
+            </div>
+
+            <div id="qtdPessoas">
+                <div>
+                    <p>Adultos</p>
+                    <select type="text" id="adultos">
+                    <option value="">Quantidade de adultos</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                </div>
+                <div> 
+                    <p>Crianças</p>
+                    <select type="text" id="criancas">
+                    <option value="">Quantidade de crianças</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="Mais de 2">Mais de 2</option>
+                </select>
+                </div>
+            </div>
+               <div> 
+                <br>
+                <p>Idade da Criança</p>
+                <select type="text" id="idade">
+                <option value="">Selecione a idade da criança</option>
+                <option value="0 Ano">0 Ano</option>
+                <option value="1 Ano">1 Ano</option>
+                <option value="2 Ano">2 Ano</option>
+                <option value="3 Ano">3 Ano</option>
+                <option value="4 Ano">4 Ano</option>
+                <option value="5 Ano">5 Ano</option>
+                <option value="6 Ano">6 Ano</option>
+                <option value="7 Ano">7 Ano</option>
+                <option value="8 Ano">8 Ano</option>
+                <option value="9 Ano">9 Ano</option>
+                <option value="10 Ano">10 Ano</option>
+                <option value="11 Ano">11 Ano</option>
+                <option value="Mais de 11">Mais de 11</option>
+            </select>
+            </div>
+
+            <button id="reservaButton" onclick="reserva()">Faça sua reserva</button>
+        </div>
+    </section>
+
+    <!-- Temporada -->
+    <section id="temporada">
+        <div class="container" id="temporadaBox">
+            <img id="temporadaBrand" src="src/img/footer/Datas-especiais-.png" alt="">
+
+            <div id="temporadaImgs" class="container">
+                <a href="">
+                    <img src="./src/img/comemoração/01.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./src/img/comemoração/04.png" alt="">
+                </a>
+                <a href="">
+                    <img src="./src/img/comemoração/03.png" alt="">
+                </a>
+		 <a href="">
+                    <img src="./src/img/comemoração/02.png" alt="">
+		 </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- mostruario -->
+    <section id="mostruario">
+        <div >
+            <img id="mostruarioBrand" src="src/img/footer/at.png" alt="">
+        </div>
+
+        <div class="container tituloDireito" >
+            <h1>Nossas acomodações</h1>
+            <P>Hotel Place Jardin</P>
+        </div>
+
+        <div class="direito" >
+
+
+                <div class="direitoBox" class="container">
+                    <a href="https://api.whatsapp.com/send?phone=55879812297958">
+                        <img src="./src/img/temporada/praia1.jpg" alt="">
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=55879812297958">
+                        <img src="./src/img/temporada/praia2.jpg" alt="">
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=55879812297958">
+                        <img src="./src/img/temporada/praia3.jpg" alt="">
+                    </a>
+                </div>
+
+        </section>
+
+    <!-- Contatos -->
+    <section id="contato">
+        <div class="container">
+            <div id="contatoBox">
+
+
+
+                <div id="contatoDireito">
+                    <div class="brandContato">
+                        <img src="src/img/contatos/Frame 1.png" alt="">
+                    </div>
+                    <div id="contatoForm" class="container">
+                        <input type="text" placeholder="Nome" id="promocaoNome">
+                        <input type="text" placeholder="Telefone" id="promocaoTelefone">
+                        <input type="email" placeholder="E-mail" id="promocaoEmail">
+                        <div>
+                            <p>Seus dados apenas serão utilizados para fins de comunicação e marketing. Você pode cancelar o recebimento de comunicações e mensagens quando quiser. Para mais informações confira nosso Aviso de Privacidade.</p>
+                        </div>
+                        <div id="contatoButton">
+                            <button id="promocaoButton" onclick="promocao()">Enviar</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="contatoEsquerdo">
+                    <div class="brandContato">
+                        <img src="src/img/contatos/Frame 2.png" alt="">
+                    </div>
+                    <div id="redes">
+                        <a href="https://www.instagram.com/hotelplacejardin/">
+                            <img src="src/img/contatos/Frame 5.png" alt="Instagram">
+                        </a>
+
+                        <a href="https://www.facebook.com/hotelplacejardin">
+                            <img src="src/img/contatos/Frame 3.png" alt="Facebook">
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <hr style="border: 1px solid #000;">
+        <!-- Maps -->
+
+  <section id="local" class="container"> 
+	<h1>Localização</h1>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3941.8742216575665!2d-36.49791682625378!3d-8.891284491197176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7070cee7ca025f7%3A0x51bffa01e5be5dee!2sR.%20Maur%C3%ADcio%20de%20Nassau%2C%20107%20-%20Santo%20Ant%C3%B4nio%2C%20Garanhuns%20-%20PE%2C%2055293-110!5e0!3m2!1spt-BR!2sbr!4v1711560579803!5m2!1spt-BR!2sbr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </section>
+        <!-- Footer -->
+
+        <div id="final" class="container">
+            <div>
+                <img src="src/img/footer/selo-site-protegido-ssl.webp" width="1200" height="20" alt="">
+            </div>
+
+            <div style="max-width: 1000px;">
+                <p>
+                    <p>Endereço: Rua Maurício de nassau N° 107, Santo Antônio - Garanhuns /PE CEP: 55293-100 📧 reservashotelplacejardin@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script src="scripts/menu.js"></script>
+<script src="scripts/whatsapp/index.js"></script>
+<script src="scripts/whatsapp/promocao.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="Anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="Anonymous"></script>
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/bb2d553a57.js" crossorigin="Anonymous"></script>
+<script src="./scripts/carrousel.js"></script>
+<script src="scripts/loading.js"></script>
+
+</html>
+        <!-- START Widget WhastApp -->
+		<a href="http://wa.me/+5587981229795" class="bt-whatsApp" target="_blank" style="right:25px; position:fixed;width:60px;height:60px;bottom:40px;z-index:100;">
+			<img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI2MHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA2MCA2MCIgd2lkdGg9IjYwcHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGUvPjxkZWZzLz48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGlkPSJibGFjayIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiPjxnIGlkPSJ3aGF0c2FwcCI+PHBhdGggZD0iTTMwLDYwIEM0Ni41Njg1NDMzLDYwIDYwLDQ2LjU2ODU0MzMgNjAsMzAgQzYwLDEzLjQzMTQ1NjcgNDYuNTY4NTQzMywwIDMwLDAgQzEzLjQzMTQ1NjcsMCAwLDEzLjQzMTQ1NjcgMCwzMCBDMCw0Ni41Njg1NDMzIDEzLjQzMTQ1NjcsNjAgMzAsNjAgWiIgZmlsbD0iIzAwMDAwMCIvPjxwYXRoIGQ9Ik0zMC4wNzEyNjE1LDQ2LjIyMTA0NjIgQzI3LjIxMDgzMDgsNDYuMjIxMDQ2MiAyNC41MjM1NjkyLDQ1LjQ4OTk2OTIgMjIuMTg1Niw0NC4yMDY4OTIzIEwxMy4xNTM4NDYyLDQ3LjA3NjkyMzEgTDE2LjA5ODA5MjMsMzguMzkxODc2OSBDMTQuNjEzMDQ2MiwzNS45NTIzNjkyIDEzLjc1NzUzODUsMzMuMDkxNTY5MiAxMy43NTc1Mzg1LDMwLjAzMzYgQzEzLjc1NzUzODUsMjEuMDkzNDE1NCAyMS4wNjEyOTIzLDEzLjg0NjE1MzggMzAuMDcxNjMwOCwxMy44NDYxNTM4IEMzOS4wODA4NjE1LDEzLjg0NjE1MzggNDYuMzg0NjE1NCwyMS4wOTM0MTU0IDQ2LjM4NDYxNTQsMzAuMDMzNiBDNDYuMzg0NjE1NCwzOC45NzM3ODQ2IDM5LjA4MTIzMDgsNDYuMjIxMDQ2MiAzMC4wNzEyNjE1LDQ2LjIyMTA0NjIgWiBNMzAuMDcxMjYxNSwxNi40MjQxMjMxIEMyMi41MDc5Mzg1LDE2LjQyNDEyMzEgMTYuMzU1ODE1NCwyMi41MjkzNTM4IDE2LjM1NTgxNTQsMzAuMDMzNiBDMTYuMzU1ODE1NCwzMy4wMTE0NDYyIDE3LjMyNjUyMzEsMzUuNzY5MjMwOCAxOC45NjgxMjMxLDM4LjAxMzA0NjIgTDE3LjI1NDg5MjMsNDMuMDY3MDc2OSBMMjIuNTI1MjkyMyw0MS4zOTE4NzY5IEMyNC42OTEyLDQyLjgxMzc4NDYgMjcuMjg1NDE1NCw0My42NDMwNzY5IDMwLjA3MTI2MTUsNDMuNjQzMDc2OSBDMzcuNjMzNDc2OSw0My42NDMwNzY5IDQzLjc4NjcwNzcsMzcuNTM4MjE1NCA0My43ODY3MDc3LDMwLjAzMzk2OTIgQzQzLjc4NjcwNzcsMjIuNTI5NzIzMSAzNy42MzM0NzY5LDE2LjQyNDEyMzEgMzAuMDcxMjYxNSwxNi40MjQxMjMxIEwzMC4wNzEyNjE1LDE2LjQyNDEyMzEgWiBNMzguMzA4OCwzMy43NjE3MjMxIEMzOC4yMDgzNjkyLDMzLjU5NjY3NjkgMzcuOTQxNzg0NiwzMy40OTY5ODQ2IDM3LjU0MjY0NjIsMzMuMjk4NzA3NyBDMzcuMTQyNCwzMy4xMDA0MzA4IDM1LjE3NTg3NjksMzIuMTQwMDYxNSAzNC44MDk5NjkyLDMyLjAwODI0NjIgQzM0LjQ0Mjk1MzgsMzEuODc2MDYxNSAzNC4xNzYsMzEuODA5MjMwOCAzMy45MDk3ODQ2LDMyLjIwNjUyMzEgQzMzLjY0MzU2OTIsMzIuNjAzODE1NCAzMi44NzcwNDYyLDMzLjQ5Njk4NDYgMzIuNjQzMzIzMSwzMy43NjE3MjMxIEMzMi40MDk5NjkyLDM0LjAyNjgzMDggMzIuMTc2OTg0NiwzNC4wNjAwNjE1IDMxLjc3NzEwNzcsMzMuODYxNDE1NCBDMzEuMzc3NiwzMy42NjMxMzg1IDMwLjA4ODk4NDYsMzMuMjQ0MDYxNSAyOC41NjExMDc3LDMxLjg5MjMwNzcgQzI3LjM3MjU1MzgsMzAuODQwNzM4NSAyNi41Njk4NDYyLDI5LjU0MjUyMzEgMjYuMzM2ODYxNSwyOS4xNDQ4NjE1IEMyNi4xMDM1MDc3LDI4Ljc0NzkzODUgMjYuMzEyMTIzMSwyOC41MzM0MTU0IDI2LjUxMjI0NjIsMjguMzM1ODc2OSBDMjYuNjkyMDYxNSwyOC4xNTc5MDc3IDI2LjkxMjEyMzEsMjcuODcyNDkyMyAyNy4xMTIyNDYyLDI3LjY0MDk4NDYgQzI3LjMxMjM2OTIsMjcuNDA5MTA3NyAyNy4zNzg4MzA4LDI3LjI0NDA2MTUgMjcuNTExNzUzOCwyNi45Nzg5NTM4IEMyNy42NDU0MTU0LDI2LjcxNDIxNTQgMjcuNTc4NTg0NiwyNi40ODI3MDc3IDI3LjQ3ODUyMzEsMjYuMjgzNjkyMyBDMjcuMzc4NDYxNSwyNi4wODU0MTU0IDI2LjU3ODMzODUsMjQuMTMyOTIzMSAyNi4yNDUyOTIzLDIzLjMzODMzODUgQzI1LjkxMjI0NjIsMjIuNTQ0NDkyMyAyNS41Nzk1NjkyLDIyLjY3NjY3NjkgMjUuMzQ1ODQ2MiwyMi42NzY2NzY5IEMyNS4xMTI0OTIzLDIyLjY3NjY3NjkgMjQuODQ1OTA3NywyMi42NDM0NDYyIDI0LjU3OTMyMzEsMjIuNjQzNDQ2MiBDMjQuMzEyNzM4NSwyMi42NDM0NDYyIDIzLjg3OTI2MTUsMjIuNzQyNzY5MiAyMy41MTI2MTU0LDIzLjEzOTY5MjMgQzIzLjE0NjMzODUsMjMuNTM2OTg0NiAyMi4xMTM2LDI0LjQ5Njk4NDYgMjIuMTEzNiwyNi40NDkxMDc3IEMyMi4xMTM2LDI4LjQwMTYgMjMuNTQ1ODQ2MiwzMC4yODggMjMuNzQ2MzM4NSwzMC41NTIzNjkyIEMyMy45NDYwOTIzLDMwLjgxNjczODUgMjYuNTExODc2OSwzNC45NTM2IDMwLjU3NjczODUsMzYuNTQyNCBDMzQuNjQzMDc2OSwzOC4xMzA4MzA4IDM0LjY0MzA3NjksMzcuNjAwOTg0NiAzNS4zNzYzNjkyLDM3LjUzNDg5MjMgQzM2LjEwODU1MzgsMzcuNDY4OCAzNy43NDEyOTIzLDM2LjU3NTI2MTUgMzguMDc1NDQ2MiwzNS42NDg4NjE1IEMzOC40MDgxMjMxLDM0LjcyMTcyMzEgMzguNDA4MTIzMSwzMy45MjcxMzg1IDM4LjMwODgsMzMuNzYxNzIzMSBMMzguMzA4OCwzMy43NjE3MjMxIFoiIGZpbGw9IiNGRkZGRkYiLz48L2c+PC9nPjwvc3ZnPg==" alt="" width="60px">
+			</a>
+			<span id="alertWapp" style="right:30px; visibility: hidden; position:fixed;	width:17px;	height:17px;bottom:90px; background:red;z-index:101; font-size:11px;color:#fff;text-align:center;border-radius: 50px; font-weight:bold;line-height: normal; "> 1 </span>
+			<div id="msg1" style="right: 90px; visibility: visible; background: #091733; color: #fff; position: fixed; width: 200px; bottom: 52px; text-align: center; font-size: 13px; line-height: 31px; height: 32px; border-radius: 100px; z-index: 100; ">Fale conosco pelo WhatsApp</div>
+			<script type="text/javascript">function showIt2() {document.getElementById("msg1").style.visibility = "visible";}    setTimeout("showIt2()", 5000); function hiddenIt() {document.getElementById("msg1").style.visibility = "hidden";}setTimeout("hiddenIt()", 15000); function showIt3() {document.getElementById("msg1").style.visibility = "visible";} setTimeout("showIt3()", 25000);  msg1.onclick = function() {document.getElementById('msg1').style.visibility = "hidden"; };function alertW() { document.getElementById("alertWapp").style.visibility = "visible";	} setTimeout("alertW()", 15000); </script>
+			<!-- END Widget WhastApp -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1579320069277566');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1579320069277566&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+    <!-- POP UP DE AVISO -->
+<style>
+
+    /* The Modal (background) */
+    .modal-aviso {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 100; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(255,230,179); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-aviso-content {
+      position: relative;
+      background-color: #ffffff;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+    }
+    
+    /* Add Animation */
+    @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+    }
+    
+    @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+    }
+    
+    /* The Close Button */
+    .close-aviso {
+      color: rgb(255, 255, 255);
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close-aviso:hover,
+    .close-aviso:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .modal-aviso-header {
+      padding: 2px 16px;
+      background-color: #ff0000;
+      color: rgb(255, 255, 255);
+    }
+    
+    .modal-aviso-body {
+        padding: 16px 16px;
+        font-size: 20px;
+        color: black;
+    }
+    
+    .modal-aviso-footer {
+      padding: 2px 16px;
+      background-color: #ff0000;
+      color: rgb(255, 255, 255);
+    }
+    </style>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal-aviso">
+    
+      <!-- Modal content -->
+      <div class="modal-aviso-content">
+        <div class="modal-aviso-header">
+          <span class="close-aviso">&times;</span>
+          <h2>AVISO DE EXPIRAÇÃO</h2>
+        </div>
+        <div class="modal-aviso-body">
+          <p>Olá <b>Hotel Place Jardin</b></p>
+          <p>A Hospedagem do seu site venceu!</p>
+          <p>Gostariamos de informar que a sua hospedagem de site anual da sua empresa expirou.</p>
+          <p>Evite bloqueio do seu site!</p>
+        </div>
+        <div class="modal-aviso-footer">
+          <h3>Entre em contato com adminstrador até dia 20/12/2024</h3>
+        </div>
+      </div>
+    
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close-aviso")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    
+    setTimeout(function(){ 
+        document.getElementById("myModal").style.display = "block";
+    }, 1000);
+    
+    </script>
+    <!-- FIM -->
